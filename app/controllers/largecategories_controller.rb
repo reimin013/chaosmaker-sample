@@ -10,6 +10,10 @@ class LargecategoriesController < ApplicationController
   def create
     # 親子孫のデータの作成
   	@largecategory = LargeCategory.create(largecategory_params)
+    if @largecategory.save
+      redirect_to largecategories_path
+    else
+      render
   end
 
 private
@@ -19,7 +23,7 @@ def largecategory_params
   	[
   		:small_category_name, companies_attributes:
   		  [
-  		    :company_name
+  		    :company_name, :company_image
   		  ]
     ]
   )

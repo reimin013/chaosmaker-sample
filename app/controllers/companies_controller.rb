@@ -11,9 +11,12 @@ class CompaniesController < ApplicationController
   	# ストロングパラメータを使用
   	company = Company.new(company_params)
   	# DBへ保存する
-  	company.save
+  	if company.save
   	# 一覧画面へリダイレクト
-  	redirect_to companies_path
+  	  redirect_to companies_path
+    else
+      render new_company_path
+    end
   end
 
   def index
