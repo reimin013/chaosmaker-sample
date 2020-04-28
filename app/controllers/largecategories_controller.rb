@@ -1,0 +1,2 @@
+class LargecategoriesController < ApplicationController
+end

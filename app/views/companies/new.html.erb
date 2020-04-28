@@ -1,0 +1,19 @@
+<h1 class="form-title">カオスマップ投稿フォーム</h1>
+
+<div class="post-form">
+<h2 class="post-type">データを1つずつ投稿</h2>
+<%= form_for @company do |f| %>
+
+  <h3>企業名</h3>
+  　<%= f.text_field :company_name %>
+  <h3>ロゴイメージ</h3>
+  	<%= f.attachment_field :company_image %>
+  <h3>カテゴリ（小）</h3>
+  	<%= f.text_field :small_category_id %>
+
+  <%= f.submit "送信" %>
+<% end %>
+
+</div>
+
+<p class="link-to-index"><%= link_to("投稿一覧", companies_path) %></p>

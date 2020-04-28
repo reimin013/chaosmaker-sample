@@ -1,0 +1,2 @@
+module SmallcategoriesHelper
+end
