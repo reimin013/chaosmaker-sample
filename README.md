@@ -1,4 +1,14 @@
-# README
+## カオスメーカーサンプルアプリ
+
+カースメーカー（カオスマップを自動的に生成するアプリケーション）のサンプルを作っています。
+
+### モデル
+
+- Large Category
+- Small Category
+- Company
+
+<!-- # README
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -22,3 +32,4 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+ -->
