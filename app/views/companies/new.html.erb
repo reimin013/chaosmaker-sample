@@ -9,11 +9,12 @@
   <h3>ロゴイメージ</h3>
   	<%= f.attachment_field :company_image %>
   <h3>カテゴリ（小）</h3>
-  	<%= f.text_field :small_category_id %>
+  	<%= f.collection_select(:small_category_id, @smallcategories, :id, :small_category_name) %>
 
   <%= f.submit "送信" %>
 <% end %>
 
 </div>
 
-<p class="link-to-index"><%= link_to("投稿一覧", companies_path) %></p>
+<p class="link-to-index"><%= link_to("企業一覧", companies_path) %></p>
+<p class="link-to-index"><%= link_to("カテゴリ追加", companies_path) %></p>

@@ -3,7 +3,7 @@ class CompaniesController < ApplicationController
   def new
   	# Viewへ渡すためのインスタンス変数に空のモデルオブジェクトを生成する。
     @company = Company.new
-    # @small_category = SmallCategory.new
+    @smallcategories = SmallCategory.all
     # @large_category = LargeCategory.new
   end
 

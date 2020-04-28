@@ -1,0 +1,22 @@
+<h1 class="form-title">カオスマップ投稿フォーム</h1>
+
+<div class="post-form">
+<h2 class="post-type">カテゴリを投稿</h2>
+<%= form_for @largecategory, url: large_categories_path do |f| %>
+<%= f.label :large_category_name, "大カテゴリ名" %>
+<%= f.text_field :large_category_name, class: 'form_control' %>
+
+<%= f.fields_for :small_categories do |d| %>
+  <%= d.label :small_category_name, "小カテゴリ名" %>
+  <%= d.text_field :small_category_name, class: 'form_control' %>
+
+  <%= d.fields_for :companies do |m| %>
+    <%= m.label :company_name, "会社名" %>
+    <%= m.text_field :company_name, class: 'form_control' %>
+  <% end %>
+<% end %>
+
+  <%= f.submit "送信" %>
+<% end %>
+
+</div>
