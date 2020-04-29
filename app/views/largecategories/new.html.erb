@@ -1,18 +1,20 @@
 <h1 class="form-title">カオスマップ投稿フォーム</h1>
 
-<div class="post-form">
 <h2 class="post-type">データを投稿</h2>
-<%= form_for @largecategory, url: largecategories_path do |f| %>
-<p><%= f.label :large_category_name, "カテゴリ名（大）" %></p>
-<%= f.text_field :large_category_name, class: 'form_control' %>
+<!-- LargeCategoryモデル -->
+<%= form_with(model: @large_category, local: true, url: largecategories_path) do |f| %>
+
+ <p><%= f.label :large_category_name, "カテゴリ名（大）" %></p>
+ <%= f.text_field :large_category_name, class: 'form_control' %>
 
 <br>
-<%= f.fields_for :small_categories do |d| %>
+<!-- ここからSmallCategoryモデル -->
+<%= f.fields_for @small_category do |d| %>
   <p><%= d.label :small_category_name, "カテゴリ名（小）" %></p>
   <%= d.text_field :small_category_name, class: 'form_control' %>
 
 <br>
-  <%= d.fields_for :companies do |m| %>
+  <%= d.fields_for @company do |m| %>
     <p><%= m.label :company_name, "サービス名" %></p>
     <%= m.text_field :company_name, class: 'form_control' %>
 
@@ -23,5 +25,3 @@
 
   <p><%= f.submit "送信" %></p>
 <% end %>
-
-</div>
