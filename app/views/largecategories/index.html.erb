@@ -12,17 +12,16 @@
 
 <!--  <tbody> -->
   <% @large_categories.each do |f| %>
+ 	  	<h4><%= f.large_category_name %></h4>
 
- 	  	<p><%= f.large_category_name %></p>
+ 	    <% @small_categories.each do |d| %>
+ 	    	<h5><%= d.small_category_name %></h5>
 
- 	  <% @small_categories.each do |d| %>
- 	  	<p><%= d.small_category_name %></p>
-
- 	  	<% @companies.each do |m| %>
- 	  	  <P><%= m.company_name %></P>
- 	  	  <p><%= attachment_image_tag m, :company_image, :fill, 320, 40 %></p>
+ 	  		<% d.companies.each do |m| %>
+ 	  	  		<P><%= m.company_name %></P>
+ 	  	  		<p><%= attachment_image_tag m, :company_image, :fill, 320, 40 %></p>
+ 	  		<% end %>
  	  	<% end %>
- 	  <% end %>
  	<!-- </tr> -->
   <% end %>
 <!--  </tbody> -->

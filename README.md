@@ -4,9 +4,14 @@
 
 ### モデル
 
-- Large Category
-- Small Category
-- Company
+- LargeCategoryモデル
+- SmallCategoryモデル
+- Companyモデル
+
+- 1つのフォームで上記3つのテーブルに同時にレコードを作成することを試みた。
+	- LargeCategoriesテーブル ⇔ SmallCategoriesテーブル ... 1対Nの親子関係
+	- SmallCategoriesテーブル ⇔ Comapniesテーブル ... 1対Nの子孫関係
+
 
 <!-- # README
 
