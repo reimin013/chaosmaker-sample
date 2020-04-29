@@ -18,9 +18,9 @@
  	  <% @small_categories.each do |d| %>
  	  	<p><%= d.small_category_name %></p>
 
- 	  	<% @compannies.each do |m| %>
+ 	  	<% @companies.each do |m| %>
  	  	  <P><%= m.company_name %></P>
- 	  	  <p><%= attachment_image_tag m, :logo, :fill, 320, 40 %></p>
+ 	  	  <p><%= attachment_image_tag m, :company_image, :fill, 320, 40 %></p>
  	  	<% end %>
  	  <% end %>
  	<!-- </tr> -->

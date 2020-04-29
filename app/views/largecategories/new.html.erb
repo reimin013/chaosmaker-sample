@@ -2,19 +2,19 @@
 
 <h2 class="post-type">データを投稿</h2>
 <!-- LargeCategoryモデル -->
-<%= form_with(model: @large_category, local: true, url: largecategories_path) do |f| %>
+<%= form_for @large_category, url: largecategories_path do |f| %>
 
  <p><%= f.label :large_category_name, "カテゴリ名（大）" %></p>
  <%= f.text_field :large_category_name, class: 'form_control' %>
 
 <br>
 <!-- ここからSmallCategoryモデル -->
-<%= f.fields_for @small_category do |d| %>
+<%= f.fields_for :small_categories do |d| %>
   <p><%= d.label :small_category_name, "カテゴリ名（小）" %></p>
   <%= d.text_field :small_category_name, class: 'form_control' %>
 
 <br>
-  <%= d.fields_for @company do |m| %>
+  <%= d.fields_for :companies do |m| %>
     <p><%= m.label :company_name, "サービス名" %></p>
     <%= m.text_field :company_name, class: 'form_control' %>
 
@@ -25,3 +25,5 @@
 
   <p><%= f.submit "送信" %></p>
 <% end %>
+
+<p class="link-to-index"><%= link_to("投稿一覧", largecategories_path) %></p>
