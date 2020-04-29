@@ -13,13 +13,18 @@ class LargecategoriesController < ApplicationController
     if @largecategory.save
       redirect_to largecategories_path
     else
-      render
+      render :new
+    end
+  end
+
+  def index
+    @largecategories = LargeCategory.all
   end
 
 private
 def largecategory_params
   # formから送られてくるパラメータの取得（ストロングパラメーター）
-  params.require(:largecategory).permit(:large_category_name, smallcategories_attributes:
+  params.require(:large_category).permit(:large_category_name, smallcategories_attributes:
   	[
   		:small_category_name, companies_attributes:
   		  [

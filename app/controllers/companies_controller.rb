@@ -15,7 +15,7 @@ class CompaniesController < ApplicationController
   	# 一覧画面へリダイレクト
   	  redirect_to companies_path
     else
-      render new_company_path
+      render :new
     end
   end
 

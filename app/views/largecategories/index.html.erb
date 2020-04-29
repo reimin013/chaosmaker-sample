@@ -1,0 +1,31 @@
+<h1 class="map-title">カオスマップ</h1>
+
+<!-- <table>
+ <thead>
+ 	<tr>
+ 	  <th>ID</th>
+ 	  <th>カテゴリ（大）</th>
+ 	  <th>カテゴリ（小）</th>
+ 	  <th>ロゴイメージ</th>
+ 	</tr>
+ </thead> -->
+
+<!--  <tbody> -->
+  <% @largecategories.each do |f| %>
+
+ 	  	<p><%= f.large_category_name %></p>
+
+ 	  <% @smallcategories.each do |d| %>
+ 	  	<p><%= d.small_category_name %></p>
+
+ 	  	<% @compannies.each do |m| %>
+ 	  	  <P><%= m.company_name %></P>
+ 	  	  <p><%= attachment_image_tag m, :logo, :fill, 320, 40 %></p>
+ 	  	<% end %>
+ 	  <% end %>
+ 	<!-- </tr> -->
+  <% end %>
+<!--  </tbody> -->
+<!-- </table> -->
+
+<p class="link-to-new"><%= link_to("新規投稿", new_largecategory_path) %></p>
