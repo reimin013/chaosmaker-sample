@@ -20,7 +20,9 @@ class CompaniesController < ApplicationController
   end
 
   def index
-  	@companies = Company.all
+    @largecategory = LargeCategory.find(1)
+    @smallcategories = SmallCategory.where(large_category_id: 1)
+  	@companies = Company.where(small_category_id: 1..2)
   end
 
 # 投稿データのストロングパラメータ

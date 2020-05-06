@@ -5,25 +5,21 @@
 <div class="row">
   <div class="col-xs-6 top-left-box">
   	<div class="largecategory-box clearfix">
-  	  <div class="largecategory-name">採用</div>
+  	  <div class="largecategory-name"><%= @largecategory.large_category_name %></div>
+       <% @smallcategories.each do |smallcategory| %>
   	    <div class="smallcategory-box">
-  	      <div class="smallcategory-name">採用管理</div>
-  	        <div class="company-box">
-             <img src="/assets/img/hito_manager.png" alt="" width="250">
-            </div>
-  	        <div class="company-box">
-             <img src="/assets/img/rec_op.png" alt="" width="250">
-            </div>
+  	      <div class="smallcategory-name">
+            <%= smallcategory.small_category_name %>
+          </div>
+             <% @companies.each do |company| %>
+             <% if company.small_category_id == smallcategory.id %>
+      	        <div class="company-box">
+                   <%= attachment_image_tag company, :company_image, alt: "", width: "250" %>
+                 </div>
+             <% end %>
+             <% end %>
   	    </div>
-        <div class="smallcategory-box">
-          <div class="smallcategory-name">求人媒体（長期）</div>
-            <div class="company-box">
-             <img src="/assets/img/e-idem.png" alt="" width="250">
-            </div>
-            <div class="company-box">
-             <img src="/assets/img/mynavi_part.jpg" alt="" width="250">
-            </div>
-        </div>
+       <% end %>
   	</div>
   </div>
 
