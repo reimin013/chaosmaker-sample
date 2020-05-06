@@ -10,6 +10,39 @@
   </head>
 
   <body>
-    <%= yield %>
+     <header>
+      <div class="header-middle clearfix">
+         <a href="#main-visual">
+          <img class="header-img" src="">
+         </a>
+         <nav>
+          <div class="menu-box">
+            <span class="list-bar"></span>
+            <span class="list-bar"></span>
+            <span class="list-bar"></span>
+          </div>
+          <ul class="nav-list">
+            <li class="nav-list-item">top</li>
+            <li class="nav-list-item">new</li>
+            <li class="nav-list-item">map</li>
+            <li class="nav-list-item">company</li>
+          </ul>
+         </nav>
+      </div>
+     </header>
+
+     <div class="body">
+       <div class="container">
+
+          <%= yield %>
+
+
+       </div>
+     </div>
+
+
+    <footer>
+      <p class="footer-text">© All rights recerved by Reimi Goto</p>
+    </footer>
   </body>
 </html>

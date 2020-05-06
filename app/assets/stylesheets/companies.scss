@@ -1,3 +1,80 @@
 // Place all the styles related to the companies controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.map-title {
+  text-align: center;
+  font-size: 30px;
+  background-color: #ECEFF1;
+  margin: 5px auto;
+}
+
+.top-left-box {
+  height: 410px;
+  // background-color: #ff7f50;
+ }
+
+.top-right-box {
+  height: 410px;
+  // background-color: #ffb6c1;
+}
+
+.largecategory-box {
+  // height: 400px;
+  margin-top: 5px;
+  border: 3px solid;
+}
+
+.top-left-box > .largecategory-box {
+  border-color: #0095d9;
+}
+
+.top-right-box > .largecategory-box {
+  border-color: #ffc0cb;
+}
+
+.largecategory-name {
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 30px;
+  font-family: 'arial unicode ms';
+}
+
+.top-left-box > .largecategory-box> .largecategory-name {
+  color: #0095d9;
+}
+
+.top-right-box > .largecategory-box> .largecategory-name {
+  color: #d04f97;
+}
+
+.smallcategory-box {
+  width: 270px;
+  // height: 350px;
+  border: 1px solid #eaeaea;
+  float: left;
+  margin-left: 3px;
+}
+
+.smallcategory-name {
+  width: 150px;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 10px;
+  // background-color: #0095d9;
+}
+
+.top-left-box > .largecategory-box > .smallcategory-box > .smallcategory-name {
+  background-color: #0095d9;
+}
+
+.top-right-box > .largecategory-box > .smallcategory-box > .smallcategory-name {
+  background-color: #d04f97;
+}
+
+.company-box {
+  line-height: 70px;
+  margin: 5px;
+  // border: 1px solid #000000;
+  text-align: center;
+}
