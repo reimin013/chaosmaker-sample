@@ -3,11 +3,15 @@
 </div>
 
 <div class="row">
-  <div class="col-xs-6 top-left-box">
-  	<div class="largecategory-box clearfix">
-  	  <div class="largecategory-name"><%= @largecategory.large_category_name %></div>
+  <div class="clearfix">
+    <% @largecategories.each do |largecategory| %>
+  	<div class="col-xs-6 largecategory-box clearfix">
+  	  <div class="largecategory-name">
+        <%= largecategory.large_category_name %>
+      </div>
        <% @smallcategories.each do |smallcategory| %>
-  	    <div class="smallcategory-box">
+       <% if smallcategory.large_category_id == largecategory.id %>
+        <div class="smallcategory-box">
   	      <div class="smallcategory-name">
             <%= smallcategory.small_category_name %>
           </div>
@@ -20,9 +24,13 @@
              <% end %>
   	    </div>
        <% end %>
+       <% end %>
   	</div>
+    <% end %>
   </div>
+</div>
 
+<div class="row">
   <div class="col-xs-6 top-right-box">
     <div class="largecategory-box clearfix">
       <div class="largecategory-name">管理</div>
@@ -46,5 +54,5 @@
         </div>
     </div>
   </div>
-
 </div>
+
