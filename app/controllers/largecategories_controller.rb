@@ -14,12 +14,17 @@ class LargecategoriesController < ApplicationController
 
   def create
     # 親子孫のデータの作成
-  	@large_category = LargeCategory.create(large_category_params)
-    if @large_category.save
+  	large_category = LargeCategory.find_or_create_by(large_category_name: params[:large_category][:large_category_name])
+    large_category.update_attributes(large_category_params)
+    if large_category.save
       redirect_to largecategories_path
     else
       render :new
     end
+  end
+
+  def find_or_create_by(attributes, &block)
+    find_by(attributes) || create(attributes, &block)
   end
 
 private

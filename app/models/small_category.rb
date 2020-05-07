@@ -5,4 +5,5 @@ class SmallCategory < ApplicationRecord
   has_many :companies, dependent: :destroy, inverse_of: :small_category
   # 親作成時に子供も作成できるようになる
   accepts_nested_attributes_for :companies
+
 end
