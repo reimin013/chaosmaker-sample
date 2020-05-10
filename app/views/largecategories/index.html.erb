@@ -1,41 +1,59 @@
-<h1 class="map-title">カオスマップ</h1>
+<div class="row">
+  <h1 class="map-title">バイトテック（Arebeit Tech）カオスマップ 2019</h1>
+</div>
 
-<table>
- <thead>
- 	<tr>
- 	  <th>カテゴリ（大）</th>
- 	  <th>カテゴリ（小）</th>
- 	  <th>ロゴイメージ</th>
- 	</tr>
- </thead>
+<div class="row">
+  <div class="clearfix">
+    <% @largecategories.each do |largecategory| %>
+  	<div class="col-xs-6 largecategory-box clearfix">
+  	  <div class="largecategory-name">
+        <%= largecategory.large_category_name %>
+      </div>
+       <% @smallcategories.each do |smallcategory| %>
+       <% if smallcategory.large_category_id == largecategory.id %>
+        <div class="smallcategory-box">
+  	      <div class="smallcategory-name">
+            <%= smallcategory.small_category_name %>
+          </div>
+             <% @companies.each do |company| %>
+             <% if company.small_category_id == smallcategory.id %>
+      	        <div class="company-box">
+                   <%= attachment_image_tag company, :company_image, alt: "", width: "250" %>
+                 </div>
+             <% end %>
+             <% end %>
+  	    </div>
+       <% end %>
+       <% end %>
+  	</div>
+    <% end %>
+  </div>
+</div>
 
- <tbody>
-	<tr>
-		<th>
-			<% @large_categories.each do |f| %>
-	 	  	<%= f.large_category_name %>
- 	        <% end %>
-
-	 	</th>
-	 	<th>
-	 	    <% @small_categories.each do |d| %>
-	 	    <%= d.small_category_name %>
-
- 	    </th>
- 	    <th>
- 	    	<% d.companies.each do |m| %>
- 	  	  		<P><%= m.company_name %></P>
- 	  	  		<p><%= attachment_image_tag m, :company_image, :fill, 320, 40 %></p>
- 	  	  	<% end %>
- 	  	  	<% end %>
-
- 	  	</th>
-
-
-
-
- 	</tr>
- 	</tbody>
-  </table>
+<div class="row">
+  <div class="col-xs-6 top-right-box">
+    <div class="largecategory-box clearfix">
+      <div class="largecategory-name">管理</div>
+        <div class="smallcategory-box">
+          <div class="smallcategory-name">シフト・勤怠管理</div>
+            <div class="company-box">
+             <img src="/assets/img/AirSHIFT.png" alt="" width="250">
+            </div>
+            <div class="company-box">
+             <img src="/assets/img/jobkan.jpg" alt="" width="250">
+            </div>
+        </div>
+        <div class="smallcategory-box">
+          <div class="smallcategory-name">コミュニケーション</div>
+            <div class="company-box">
+             <img src="/assets/img/LINEWORKSlogo.jpg" alt="" width="250">
+            </div>
+            <div class="company-box">
+             <img src="/assets/img/logo_talknote.png" alt="" width="250">
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
 
 <p class="link-to-new"><%= link_to("新規投稿", new_largecategory_path) %></p>
